@@ -8,7 +8,7 @@ from fastapi import FastAPI
 from domain import *
 from urllib.parse import urlparse
 
-messages_url = None
+messages_urls = None
 logging_urls = []
 
 app = FastAPI()
@@ -54,10 +54,7 @@ if __name__ == "__main__":
     host_url = urlparse(sys.argv[1])
     config_server_url = sys.argv[2]
 
-    messages_url = get_service_ips("messages-service")
-    logging_urls = get_service_ips("logging-service")
-
-    print("Messages Service IPs:", messages_url)
-    print("Logging Service IPs:", logging_urls)
+    messages_urls = get_service_ips("messages-service")
+    logging_urls = get_service_ips("logging-services")
 
     uvicorn.run(app, host=host_url.hostname, port=host_url.port)
