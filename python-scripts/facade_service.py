@@ -29,13 +29,12 @@ def add_data(message: Message):
 
 @app.get("/")
 def get_data():
-    logging_response = requests.get(logging_url)
-    logging_messages = json.loads(logging_response.content.decode("utf-8"))
-    # messages_response = requests.get(messages_url)
+    logging_service_response = requests.get(logging_url)
+    logging_messages = json.loads(logging_service_response.content.decode("utf-8"))
+    messages_service_response = requests.get(messages_url)
+    messages_service_messages = json.loads(messages_service_response.content.decode("utf-8"))
 
-    # "Messages response": messages_response.json()["msg"]
-
-    return {"logging_response": logging_messages}
+    return {"logging_service_response": logging_messages, "messages_service_response": messages_service_messages}
 
 if __name__ == "__main__":
     host_url = urlparse(sys.argv[1])
