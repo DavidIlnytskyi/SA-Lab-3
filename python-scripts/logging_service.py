@@ -9,6 +9,8 @@ app = FastAPI()
 
 @app.post("/")
 def add_data(data: DataModel):
+    print(f"Added key: {data.uuid} with value: {data.msg}")
+
     distributed_map.set(data.uuid, data.msg)
 
     return {"msg": "success"}
