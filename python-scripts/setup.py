@@ -8,6 +8,26 @@ NUMBER_NODES = 3
 config = configparser.ConfigParser()
 config.read('./ips.ini')
 
+def start_config_service():
+    print(f"Starting config service...")
+
+    try:
+        request = ["python3", "./python-scripts/config_service.py", config["DEFAULT"]["Config-Service"]]
+        return subprocess.Popen(request, stdout=subprocess.PIPE, stderr=subprocess.PIPE, preexec_fn=os.setsid)
+    except Exception as e:
+        print(f"Error starting server {idx}: {e}")
+        return None
+
+def start_messages_service():
+    print("Starting messages service...")
+
+    try:
+        request = ["python3", "./python-scripts/messages_service.py", config["DEFAULT"]["Messages-Service"]]
+        return subprocess.Popen(request, stdout=subprocess.PIPE, stderr=subprocess.PIPE, preexec_fn=os.setsid)
+    except Exception as e:
+        print(f"Error starting server {idx}: {e}")
+        return None
+
 def start_logging_service(idx):
     print(f"Starting logging service {idx}...")
 
@@ -20,22 +40,15 @@ def start_logging_service(idx):
     except Exception as e:
         print(f"Error starting server {idx}: {e}")
         return None
-    
-def start_messages_service():
-    print("Starting messages service...")
-
-    try:
-        request = ["python3", "./python-scripts/messages_service.py", config["DEFAULT"]["Messages-Service"]]
-        return subprocess.Popen(request, stdout=subprocess.PIPE, stderr=subprocess.PIPE, preexec_fn=os.setsid)
-    except Exception as e:
-        print(f"Error starting server {idx}: {e}")
-        return None
-    
 
 if __name__ == "__main__":
     processes = []
 
     try:
+        process = start_config_service()
+        if process:
+            processes.append(process)
+
         for idx in range(NUMBER_NODES):
             process = start_logging_service(idx)
             if process:
