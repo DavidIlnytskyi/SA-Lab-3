@@ -1,9 +1,9 @@
-from fastapi import FastAPI
 import requests
 import sys
 import uvicorn
 import uuid
 import json
+from fastapi import FastAPI
 from domain import *
 from urllib.parse import urlparse
 
