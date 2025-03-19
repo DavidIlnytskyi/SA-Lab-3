@@ -7,10 +7,6 @@ import json
 from domain import *
 from urllib.parse import urlparse
 
-
-MAX_RETRIES = 3
-RETRY_DELAY = 2
-
 logging_url = None
 messages_url = None
 
