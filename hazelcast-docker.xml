@@ -11,8 +11,8 @@
             <multicast enabled="false"/>
             <tcp-ip enabled="true">
                 <member>172.18.0.10:5701</member>
-                <member>172.18.0.10:5702</member>
-                <member>172.18.0.10:5703</member>
+                <member>172.18.0.11:5701</member>
+                <member>172.18.0.12:5701</member>
             </tcp-ip>
         </join>
     </network>
