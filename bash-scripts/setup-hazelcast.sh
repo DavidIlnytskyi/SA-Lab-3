@@ -1,5 +1,5 @@
 #!/bin/bash
-docker run -d --rm -v "$(pwd)"/hazelcast-docker.xml:/opt/hazelcast/hazelcast-docker.xml \
+docker run -d --rm -v "$(pwd)"/hazelcast-configs/hazelcast-one.xml:/opt/hazelcast/hazelcast-docker.xml \
     -e HAZELCAST_CONFIG=hazelcast-docker.xml \
     --network hazelcast-network \
     --ip 172.18.0.10 \
@@ -8,7 +8,7 @@ docker run -d --rm -v "$(pwd)"/hazelcast-docker.xml:/opt/hazelcast/hazelcast-doc
     hazelcast/hazelcast:latest
 
 
-docker run -d --rm -v "$(pwd)"/hazelcast-docker.xml:/opt/hazelcast/hazelcast-docker.xml \
+docker run -d --rm -v "$(pwd)"/hazelcast-configs/hazelcast-two.xml:/opt/hazelcast/hazelcast-docker.xml \
     -e HAZELCAST_CONFIG=hazelcast-docker.xml \
     --network hazelcast-network \
     --ip 172.18.0.11 \
@@ -17,7 +17,7 @@ docker run -d --rm -v "$(pwd)"/hazelcast-docker.xml:/opt/hazelcast/hazelcast-doc
     hazelcast/hazelcast:latest
 
 
-docker run -d --rm -v "$(pwd)"/hazelcast-docker.xml:/opt/hazelcast/hazelcast-docker.xml \
+docker run -d --rm -v "$(pwd)"/hazelcast-configs/hazelcast-three.xml:/opt/hazelcast/hazelcast-docker.xml \
     -e HAZELCAST_CONFIG=hazelcast-docker.xml \
     --network hazelcast-network \
     --ip 172.18.0.12 \

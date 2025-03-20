@@ -41,11 +41,11 @@ if __name__ == "__main__":
             if process:
                 processes.append(process)
 
-        # facade_service_ip = config["facade-service"].get("ips")
-        # if messages_service_ip:
-        #     process = start_service("Facade Service", "facade_service", facade_service_ip, config_service_ip)
-        #     if process:
-        #         processes.append(process)
+        facade_service_ip = config["facade-service"].get("ips")
+        if messages_service_ip:
+            process = start_service("Facade Service", "facade_service", facade_service_ip, config_service_ip)
+            if process:
+                processes.append(process)
 
 
         while True:
