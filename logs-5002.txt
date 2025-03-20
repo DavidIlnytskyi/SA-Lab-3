@@ -1,0 +1,5 @@
+Added key: 9dc17913-8b4e-439a-b43f-aaf52f93ff72 with value: I am message 0 by logging service: http://127.0.0.1:5002
+Added key: c944708a-6a0c-497c-97e8-bcd1a84fe7eb with value: I am message 1 by logging service: http://127.0.0.1:5002
+Added key: 2d26e542-7e76-49d7-9c9b-84b27f5e601c with value: I am message 4 by logging service: http://127.0.0.1:5002
+Added key: 5fcf22b5-ab18-424b-ace9-e1a36cc415cd with value: I am message 5 by logging service: http://127.0.0.1:5002
+Added key: 2bde0a68-29a9-443e-a6e5-3ee33a74f1e0 with value: I am message 9 by logging service: http://127.0.0.1:5002

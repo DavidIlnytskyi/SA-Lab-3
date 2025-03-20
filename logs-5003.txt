@@ -1,0 +1,3 @@
+Added key: d4f199b7-88d5-451a-bbc8-b6ac9ff34675 with value: I am message 2 by logging service: http://127.0.0.1:5003
+Added key: 65f95e8b-45cd-4356-b615-659b8640ab55 with value: I am message 7 by logging service: http://127.0.0.1:5003
+Added key: f59b5487-a29f-4ac7-a3a8-7b4806f53d9f with value: I am message 8 by logging service: http://127.0.0.1:5003

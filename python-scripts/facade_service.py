@@ -38,9 +38,9 @@ def add_data(message: dict):
                 print("Message sent successfully")
                 return {"msg": "success"}
         except requests.exceptions.RequestException as e:
-            print(f"Error with logging service {url}: {e}")
+            return(f"Error with logging service {url}: {e}")
     
-    return {"msg": "logging service mistake"}
+    return {"msg": f"logging service mistake {response.status_code}"}
 
 
 @app.get("/")
